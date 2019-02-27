@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build;Test" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <!--
+  User-overridable properties
+  -->
+  <PropertyGroup>
+    <SolutionDir Condition=" '$(SolutionDir)' == '' ">$(MSBuildProjectDirectory)</SolutionDir>
+    <ArtifactDir Condition=" '$(ArtifactDir)' == '' ">$(SolutionDir)\Artifacts</ArtifactDir>
+    <Solution Condition=" '$(Solution)' == '' ">$(SolutionDir)\DemiCode.Data.sln</Solution>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Any CPU</Platform>
+    <BuildVersion Condition="$(BuildVersion) == ''">0.0.0.1</BuildVersion>
+    <TestProjectPostfix Condition=" '$(TestProjectPostfix)' == '' ">Test</TestProjectPostfix>
+    <NugetSecret Condition=" '$(NugetSecret)' == '' ">nuget.org secret</NugetSecret>
+
+    <PlatformFolder Condition=" '$(Platform)' == 'Any CPU' ">bin</PlatformFolder>
+    <PlatformFolder Condition=" '$(Platform)' == 'x86' ">bin\x86</PlatformFolder>
+
+    <ExtensionTasksPath Condition=" '$(ExtensionTasksPath)' == '' ">$(SolutionDir)\.msbuild\</ExtensionTasksPath>
+    <NuGetExePath Condition=" '$(NuGetExePath)' == '' ">$(SolutionDir)\.nuget\nuget.exe</NuGetExePath>
+    
+  </PropertyGroup>
+
+
+  <!-- The assemblies to from which to e.g. unit tests.
+    A new Project element must be added for each project that should be tested and coveraged.
+  -->
+  <ItemGroup>
+    <Project Include="DemiCode.Data" />
+    <Project Include="DemiCode.Data.Autofac" />
+    <Project Include="DemiCode.Data.Fakes.FakeItEasy" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TestResultsDir>$(ArtifactDir)</TestResultsDir>
+    <Test32Bit>$(Platform.Equals('x86'))</Test32Bit>
+  </PropertyGroup>
+
+  <UsingTask AssemblyFile="$(ExtensionTasksPath)MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.Framework.AssemblyInfo" />
+  <UsingTask AssemblyFile="$(ExtensionTasksPath)MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.CodeQuality.NUnit"/>
+  <UsingTask AssemblyFile="$(ExtensionTasksPath)MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.Framework.Assembly"/>
+
+  <Target Name="Setup">
+    <MakeDir Directories="$(TestResultsDir)" />
+    <CallTarget Targets="GenerateAssemblyVersion" />
+  </Target>
+
+  <Target Name="GenerateAssemblyVersion">
+    <PropertyGroup>
+      <VersionCodeFile>$(SolutionDir)\CommonAssemblyInfo.cs</VersionCodeFile>
+    </PropertyGroup>
+    <MSBuild.ExtensionPack.Framework.AssemblyInfo AssemblyInfoFiles="$(VersionCodeFile)" 
+                                                  AssemblyVersion="$(BuildVersion)" 
+                                                  AssemblyFileVersion="$(BuildVersion)" 
+                                                  AssemblyInformationalVersion="$(BuildVersion)" 
+                                                  UpdateAssemblyInformationalVersion="true"
+                                                  />
+  </Target>
+  
+  <Target Name="Build" DependsOnTargets="Setup">
+    <MSBuild Projects="$(Solution)" Targets="Build" Properties="Configuration=$(Configuration);Platform=$(Platform)" BuildInParallel="true" />
+  </Target>
+
+  <Target Name="Test" DependsOnTargets="Build">
+    <ItemGroup>
+      <TestAssembly Include="@(Project->'$(SolutionDir)\%(Identity).$(TestProjectPostfix)\$(PlatformFolder)\$(Configuration)\%(Identity).$(TestProjectPostfix).dll')" />
+    </ItemGroup>
+
+    <Warning Text="@(TestAssembly)" />
+    
+    <MSBuild.ExtensionPack.CodeQuality.NUnit Assemblies="@(TestAssembly)" 
+                                             Use32Bit="$(Test32Bit)"
+                                             NoShadow="true" 
+                                             OutputXmlFile="$(TestResultsDir)\testresults.xml" 
+                                             ExcludeCategory="Integration"
+                                             ToolPath="C:\Program Files (x86)\NUnit 2.5.10\bin\net-2.0" />
+  </Target>
+
+
+  <!-- Convention: pick up any .nuspecs to generate from-->
+  <ItemGroup>
+    <NuSpec Include="$(SolutionDir)\**\*.nuspec" Exclude="$(SolutionDir)\packages\**\*.nuspec"  />
+  </ItemGroup>
+
+  <Target Name="CleanupArtifacts">
+    <Delete Files="$(ArtifactDir)\*.nupkg" />
+  </Target>
+  
+  <Target Name="BuildPackageArtifacts" DependsOnTargets="CleanupArtifacts;Build" Inputs="@(NuSpec)" Outputs="%(Identity).Dummy">
+
+    <PropertyGroup>
+      <ThePackage>$(ArtifactDir)\%(NuSpec.Filename).$(BuildVersion).nupkg</ThePackage>
+      <BuildCommand>"$(NuGetExePath)" pack "@(NuSpec)" -p Configuration=$(Configuration) -symbols -Version "$(BuildVersion)" -OutputDirectory "$(ArtifactDir)" -BasePath "$(SolutionDir)"</BuildCommand>
+      <PushCommand>"$(NuGetExePath)" push "$(ThePackage)" $(NugetSecret)</PushCommand>
+    </PropertyGroup>
+
+    <Exec Command="$(BuildCommand)" LogStandardErrorAsError="true" />
+    <Exec Command="$(PushCommand)" LogStandardErrorAsError="true" />
+    
+  </Target>
+
+</Project>

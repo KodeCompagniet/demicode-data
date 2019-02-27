@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>$version$</version>
+    <authors>Peter Lillevold</authors>
+    <owners>KodeCompagniet AS</owners>
+    <dependencies>
+      <dependency id="Autofac" version="2.6.1.841" />
+      <dependency id="FakeItEasy" version="1.22.0" />
+      <dependency id="NUnit" version="2.6.3" />
+      <dependency id="DemiCode.Data" version="$version$" />
+    </dependencies>
+    <frameworkAssemblies>
+    </frameworkAssemblies>
+    <id>DemiCode.Data.Fakes.FakeItEasy</id>
+    <title>DemiCode.Data.Fakes.FakeItEasy</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Faking support for DemiCode.Data</description>
+    <copyright>KodeCompagniet AS</copyright>
+    <language>en-US</language>
+    <tags>data EntityFramework FakeItEasy NUnit net40 net45 fakes</tags>
+  </metadata>
+  <files>
+    <file src="DemiCode.Data.Fakes.FakeItEasy\bin\$configuration$\DemiCode.Data.Fakes.FakeItEasy.dll" target="lib\net40\DemiCode.Data.Fakes.FakeItEasy.dll" />
+    <file src="DemiCode.Data.Fakes.FakeItEasy\bin\$configuration$\DemiCode.Data.Fakes.FakeItEasy.pdb" target="lib\net40\DemiCode.Data.Fakes.FakeItEasy.pdb" />
+    <file src="DemiCode.Data.Fakes.FakeItEasy\bin\$configuration$\DemiCode.Data.Fakes.FakeItEasy.xml" target="lib\net40\DemiCode.Data.Fakes.FakeItEasy.xml" />
+    <file src="DemiCode.Data.Fakes.FakeItEasy.NET45\bin\$configuration$\DemiCode.Data.Fakes.FakeItEasy.dll" target="lib\net45\DemiCode.Data.Fakes.FakeItEasy.dll" />
+    <file src="DemiCode.Data.Fakes.FakeItEasy.NET45\bin\$configuration$\DemiCode.Data.Fakes.FakeItEasy.pdb" target="lib\net45\DemiCode.Data.Fakes.FakeItEasy.pdb" />
+    <file src="DemiCode.Data.Fakes.FakeItEasy.NET45\bin\$configuration$\DemiCode.Data.Fakes.FakeItEasy.xml" target="lib\net45\DemiCode.Data.Fakes.FakeItEasy.xml" />
+    <file src="DemiCode.Data.Fakes.FakeItEasy\**\*.cs" target="src" exclude="DemiCode.Data.Fakes.FakeItEasy\**\obj\**\*.cs" />
+  </files>
+</package>

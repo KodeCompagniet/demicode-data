@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E641B882-CE50-454E-810D-F5E7DD164703}"
+	ProjectSection(SolutionItems) = preProject
+		build.cmd = build.cmd
+		build.msbuild = build.msbuild
+		buildrelease.cmd = buildrelease.cmd
+		CommonAssemblyInfo.cs = CommonAssemblyInfo.cs
+		publish.cmd = publish.cmd
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemiCode.Data", "DemiCode.Data\DemiCode.Data.csproj", "{FAC79580-97FC-4EB6-AF2D-4C7710478C72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemiCode.Data.Test", "DemiCode.Data.Test\DemiCode.Data.Test.csproj", "{B71482B6-9C57-45F5-BA41-DAEFFC5234A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B6C02018-8DC4-4FA8-B248-6D4CE2D1D692}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemiCode.Data.Autofac", "DemiCode.Data.Autofac\DemiCode.Data.Autofac.csproj", "{8694C8B4-7BAB-4FF0-BD5D-695C4F3E6ABF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemiCode.Data.Autofac.Test", "DemiCode.Data.Autofac.Test\DemiCode.Data.Autofac.Test.csproj", "{BA1F1046-4A5F-4368-940E-392D77290197}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemiCode.Data.Fakes.FakeItEasy", "DemiCode.Data.Fakes.FakeItEasy\DemiCode.Data.Fakes.FakeItEasy.csproj", "{8879084C-EDBC-4ECE-9516-4579BD344A21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemiCode.Data.Fakes.FakeItEasy.Test", "DemiCode.Data.Fakes.FakeItEasy.Test\DemiCode.Data.Fakes.FakeItEasy.Test.csproj", "{252BCAF7-909B-45BF-B827-B8307FC900A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemiCode.Data.NET45", "DemiCode.Data.NET45\DemiCode.Data.NET45.csproj", "{6E7E0BCC-9328-4E76-AD43-1F5922BEECA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemiCode.Data.Autofac.NET45", "DemiCode.Data.Autofac.NET45\DemiCode.Data.Autofac.NET45.csproj", "{A2BB28E3-BA18-4917-9D5C-1C6F6E83CF41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemiCode.Data.Fakes.FakeItEasy.NET45", "DemiCode.Data.Fakes.FakeItEasy.NET45\DemiCode.Data.Fakes.FakeItEasy.NET45.csproj", "{82CD6DAB-3FB4-4304-A69D-62EC0D63642A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NCrunch", "NCrunch", "{69D834F4-C6BF-4033-A68D-6EB43F962E84}"
+	ProjectSection(SolutionItems) = preProject
+		DemiCode.Data.Autofac\DemiCode.Data.Autofac.ncrunchproject = DemiCode.Data.Autofac\DemiCode.Data.Autofac.ncrunchproject
+		DemiCode.Data.Autofac.NET45\DemiCode.Data.Autofac.NET45.ncrunchproject = DemiCode.Data.Autofac.NET45\DemiCode.Data.Autofac.NET45.ncrunchproject
+		DemiCode.Data.Autofac.NET45\DemiCode.Data.Autofac.NET45.v2.ncrunchproject = DemiCode.Data.Autofac.NET45\DemiCode.Data.Autofac.NET45.v2.ncrunchproject
+		DemiCode.Data.Autofac.Test\DemiCode.Data.Autofac.Test.ncrunchproject = DemiCode.Data.Autofac.Test\DemiCode.Data.Autofac.Test.ncrunchproject
+		DemiCode.Data.Autofac.Test\DemiCode.Data.Autofac.Test.v2.ncrunchproject = DemiCode.Data.Autofac.Test\DemiCode.Data.Autofac.Test.v2.ncrunchproject
+		DemiCode.Data.Autofac\DemiCode.Data.Autofac.v2.ncrunchproject = DemiCode.Data.Autofac\DemiCode.Data.Autofac.v2.ncrunchproject
+		DemiCode.Data.Fakes.FakeItEasy\DemiCode.Data.Fakes.FakeItEasy.ncrunchproject = DemiCode.Data.Fakes.FakeItEasy\DemiCode.Data.Fakes.FakeItEasy.ncrunchproject
+		DemiCode.Data.Fakes.FakeItEasy.NET45\DemiCode.Data.Fakes.FakeItEasy.NET45.ncrunchproject = DemiCode.Data.Fakes.FakeItEasy.NET45\DemiCode.Data.Fakes.FakeItEasy.NET45.ncrunchproject
+		DemiCode.Data.Fakes.FakeItEasy.NET45\DemiCode.Data.Fakes.FakeItEasy.NET45.v2.ncrunchproject = DemiCode.Data.Fakes.FakeItEasy.NET45\DemiCode.Data.Fakes.FakeItEasy.NET45.v2.ncrunchproject
+		DemiCode.Data.Fakes.FakeItEasy.Test\DemiCode.Data.Fakes.FakeItEasy.Test.ncrunchproject = DemiCode.Data.Fakes.FakeItEasy.Test\DemiCode.Data.Fakes.FakeItEasy.Test.ncrunchproject
+		DemiCode.Data.Fakes.FakeItEasy.Test\DemiCode.Data.Fakes.FakeItEasy.Test.v2.ncrunchproject = DemiCode.Data.Fakes.FakeItEasy.Test\DemiCode.Data.Fakes.FakeItEasy.Test.v2.ncrunchproject
+		DemiCode.Data.Fakes.FakeItEasy\DemiCode.Data.Fakes.FakeItEasy.v2.ncrunchproject = DemiCode.Data.Fakes.FakeItEasy\DemiCode.Data.Fakes.FakeItEasy.v2.ncrunchproject
+		DemiCode.Data\DemiCode.Data.ncrunchproject = DemiCode.Data\DemiCode.Data.ncrunchproject
+		DemiCode.Data.NET45\DemiCode.Data.NET45.ncrunchproject = DemiCode.Data.NET45\DemiCode.Data.NET45.ncrunchproject
+		DemiCode.Data.NET45\DemiCode.Data.NET45.v2.ncrunchproject = DemiCode.Data.NET45\DemiCode.Data.NET45.v2.ncrunchproject
+		DemiCode.Data.Test\DemiCode.Data.Test.ncrunchproject = DemiCode.Data.Test\DemiCode.Data.Test.ncrunchproject
+		DemiCode.Data.Test\DemiCode.Data.Test.v2.ncrunchproject = DemiCode.Data.Test\DemiCode.Data.Test.v2.ncrunchproject
+		DemiCode.Data\DemiCode.Data.v2.ncrunchproject = DemiCode.Data\DemiCode.Data.v2.ncrunchproject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAC79580-97FC-4EB6-AF2D-4C7710478C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC79580-97FC-4EB6-AF2D-4C7710478C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC79580-97FC-4EB6-AF2D-4C7710478C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC79580-97FC-4EB6-AF2D-4C7710478C72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B71482B6-9C57-45F5-BA41-DAEFFC5234A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B71482B6-9C57-45F5-BA41-DAEFFC5234A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B71482B6-9C57-45F5-BA41-DAEFFC5234A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B71482B6-9C57-45F5-BA41-DAEFFC5234A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8694C8B4-7BAB-4FF0-BD5D-695C4F3E6ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8694C8B4-7BAB-4FF0-BD5D-695C4F3E6ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8694C8B4-7BAB-4FF0-BD5D-695C4F3E6ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8694C8B4-7BAB-4FF0-BD5D-695C4F3E6ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1F1046-4A5F-4368-940E-392D77290197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1F1046-4A5F-4368-940E-392D77290197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1F1046-4A5F-4368-940E-392D77290197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1F1046-4A5F-4368-940E-392D77290197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8879084C-EDBC-4ECE-9516-4579BD344A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8879084C-EDBC-4ECE-9516-4579BD344A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8879084C-EDBC-4ECE-9516-4579BD344A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8879084C-EDBC-4ECE-9516-4579BD344A21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{252BCAF7-909B-45BF-B827-B8307FC900A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{252BCAF7-909B-45BF-B827-B8307FC900A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{252BCAF7-909B-45BF-B827-B8307FC900A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{252BCAF7-909B-45BF-B827-B8307FC900A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E7E0BCC-9328-4E76-AD43-1F5922BEECA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7E0BCC-9328-4E76-AD43-1F5922BEECA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7E0BCC-9328-4E76-AD43-1F5922BEECA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7E0BCC-9328-4E76-AD43-1F5922BEECA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2BB28E3-BA18-4917-9D5C-1C6F6E83CF41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2BB28E3-BA18-4917-9D5C-1C6F6E83CF41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2BB28E3-BA18-4917-9D5C-1C6F6E83CF41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BB28E3-BA18-4917-9D5C-1C6F6E83CF41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82CD6DAB-3FB4-4304-A69D-62EC0D63642A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82CD6DAB-3FB4-4304-A69D-62EC0D63642A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82CD6DAB-3FB4-4304-A69D-62EC0D63642A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82CD6DAB-3FB4-4304-A69D-62EC0D63642A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{69D834F4-C6BF-4033-A68D-6EB43F962E84} = {E641B882-CE50-454E-810D-F5E7DD164703}
+	EndGlobalSection
+EndGlobal

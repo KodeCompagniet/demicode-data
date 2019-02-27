@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>$version$</version>
+    <authors>Peter Lillevold</authors>
+    <owners>KodeCompagniet AS</owners>
+    <dependencies>
+      <dependency id="Autofac" version="3.5.2" />
+      <dependency id="DemiCode.Data" version="$version$" />
+    </dependencies>
+    <frameworkAssemblies>
+    </frameworkAssemblies>
+    <id>DemiCode.Data.Autofac</id>
+    <title>DemiCode.Data.Autofac</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Data, scope, transactions</description>
+    <copyright>KodeCompagniet AS</copyright>
+    <language>en-US</language>
+    <tags>data EntityFramework net40 autofac</tags>
+  </metadata>
+  <files>
+    <file src="DemiCode.Data.Autofac\bin\$configuration$\DemiCode.Data.Autofac.dll" target="lib\net40\DemiCode.Data.Autofac.dll" />
+    <file src="DemiCode.Data.Autofac\bin\$configuration$\DemiCode.Data.Autofac.pdb" target="lib\net40\DemiCode.Data.Autofac.pdb" />
+    <file src="DemiCode.Data.Autofac\bin\$configuration$\DemiCode.Data.Autofac.xml" target="lib\net40\DemiCode.Data.Autofac.xml" />
+    <file src="DemiCode.Data.Autofac.NET45\bin\$configuration$\DemiCode.Data.Autofac.dll" target="lib\net45\DemiCode.Data.Autofac.dll" />
+    <file src="DemiCode.Data.Autofac.NET45\bin\$configuration$\DemiCode.Data.Autofac.pdb" target="lib\net45\DemiCode.Data.Autofac.pdb" />
+    <file src="DemiCode.Data.Autofac.NET45\bin\$configuration$\DemiCode.Data.Autofac.xml" target="lib\net45\DemiCode.Data.Autofac.xml" />
+    <file src="DemiCode.Data.Autofac\**\*.cs" target="src" exclude="DemiCode.Data.Autofac\**\obj\**\*.cs" />
+  </files>
+</package>

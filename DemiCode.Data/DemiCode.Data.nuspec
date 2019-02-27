@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>$version$</version>
+    <authors>Peter Lillevold</authors>
+    <owners>KodeCompagniet AS</owners>
+    <dependencies>
+      <dependency id="EntityFramework" version="6.1.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Transactions" targetFramework=".NETFramework4.0" />
+    </frameworkAssemblies>
+    <id>DemiCode.Data</id>
+    <title>DemiCode.Data</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Data, scope, transactions</description>
+    <copyright>KodeCompagniet AS</copyright>
+    <language>en-US</language>
+    <tags>data EntityFramework net40 net45</tags>
+  </metadata>
+  <files>
+    <file src="DemiCode.Data\bin\$configuration$\DemiCode.Data.dll" target="lib\net40\DemiCode.Data.dll" />
+    <file src="DemiCode.Data\bin\$configuration$\DemiCode.Data.pdb" target="lib\net40\DemiCode.Data.pdb" />
+    <file src="DemiCode.Data\bin\$configuration$\DemiCode.Data.xml" target="lib\net40\DemiCode.Data.xml" />
+    <file src="DemiCode.Data.NET45\bin\$configuration$\DemiCode.Data.xml" target="lib\net45\DemiCode.Data.xml" />
+    <file src="DemiCode.Data.NET45\bin\$configuration$\DemiCode.Data.pdb" target="lib\net45\DemiCode.Data.pdb" />
+    <file src="DemiCode.Data.NET45\bin\$configuration$\DemiCode.Data.dll" target="lib\net45\DemiCode.Data.dll" />
+    
+    <file src="DemiCode.Data\**\*.cs" target="src" exclude="DemiCode.Data\**\obj\**\*.cs" />
+  </files>
+</package>
